@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% books.forEach(book => { %>
+        <div>
+            <h2><%= book.title %></h2>
+            <p>by <%= book.author %></p>
+            <p>Price: $<%= book.price %></p>
+            <form action="/buy" method="post">
+                <input type="hidden" name="bookId" value="<%= book._id %>">
+                <button type="submit">Buy</button>
+            </form>
+        </div>
+    <% }) %>
+</body>
+</html>
